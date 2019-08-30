@@ -1,1 +1,16 @@
-<h2><%= link_to campaign.title, campaign_path(campaign) %></h2>
+<article class="campaign">
+	<section class="campaign-head">
+		<h2><%= link_to campaign.title, campaign_path(campaign) %></h2>
+		<small>
+			<time><%= campaign.created_at.to_date.strftime("%d %B, %Y")%>	</time>
+			|
+			<%= link_to 'Edit',edit_campaign_path(campaign)%>
+
+			<%= link_to 'Delete',campaign_path(campaign), method: :delete, data:{confirm:'Sure?'}%>
+		</small>
+	</section>
+
+	<section class="campaign-summary">
+		<%= campaign.summary %>
+	</section>
+</article>

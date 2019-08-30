@@ -1,5 +1,16 @@
-<h1><%=@campaign.title %></h1>
+<article class="campaign">
+	<section class="campaign-head">
+		<h1><%= @campaign.title %></h1>
+		<small>
+			<time><%= @campaign.created_at.to_date.strftime("%d %B, %Y")%>	</time>
+			|
+			<%= link_to 'Edit',edit_campaign_path(@campaign)%>
 
-<%= link_to 'edit', edit_campaign_path(@campaign) %>
-<%= link_to 'delete', campaign_path(@campaign), method: :delete, data: {confirm: 'Sure?' } %>
-<p><%=@campaign.body %></p>
+			<%= link_to 'Delete',campaign_path(@campaign), method: :delete, data:{confirm:'Sure?'}%>
+		</small>
+	</section>
+
+	<section class="campaign-body">
+		<%= @campaign.body %>
+	</section>
+</article>
