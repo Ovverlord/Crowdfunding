@@ -27,9 +27,9 @@ class CampaignsController < ApplicationController
 
 	def update
 		if @campaign.update_attributes(campaign_params)
-			redirect_to @campaign
+			redirect_to @campaign, success: 'Campaign updated'
 		else
-			render :edit
+			render :edit, danger: 'Campaign not updated'
 		end
 	end
 

@@ -1,3 +1,15 @@
+
+<% if @campaign.errors.any? %>
+<div class="alert alert-danger"> 
+	<h5><%= t('common.errors') %></h5>
+	<ul>
+		<% @campaign.errors.full_messages.each do |error| %>
+		<li><%= error %></li>
+		<%end%>
+	</ul>
+</div>
+<%end%>
+
 <%= form_for @campaign do |f| %>
 <div class="form-group">
 	<%= f.label :title %>
