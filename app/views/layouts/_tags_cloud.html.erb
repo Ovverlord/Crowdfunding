@@ -1,0 +1,5 @@
+  <div class="card-block p-2 text-center tag_cloud">
+    <% tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class| %>
+      <%= link_to tag.name, tag_path(tag.name), class: css_class + ' badge badge-primary' %>
+    <% end %>
+  </div>

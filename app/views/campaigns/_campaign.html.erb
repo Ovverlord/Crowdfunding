@@ -13,4 +13,8 @@
 	<section class="campaign-summary">
 		<%= campaign.summary %>
 	</section>
+
+	<section class="footer-summary">
+		<%= raw campaign.tags.sort_by(&:name).map(&:name).map {|t| link_to t, tag_path(t), class: 'badge badge-primary'}.join(' ') %>
+	</section>
 </article>

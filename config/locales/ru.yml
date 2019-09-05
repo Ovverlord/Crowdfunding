@@ -1,0 +1,13 @@
+ru:
+  common: 
+    errors: 'Ошибки заполнения'
+  campaigns:
+    index:
+      title: 'Кампании'
+    new:
+      title: 'Новая кампания'
+    edit:
+      title: 'Редактирование кампании'
+    form:
+      submit:
+       '%{action} кампанию'
