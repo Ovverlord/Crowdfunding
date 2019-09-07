@@ -1,6 +1,11 @@
 ru:
   common: 
     errors: 'Ошибки заполнения'
+    edit: 'Изменить'
+    remove: "Удалить"
+  will_paginate:
+    previous_label: 'Предыдущая'
+    next_label: 'Следующая'
   campaigns:
     index:
       title: 'Кампании'

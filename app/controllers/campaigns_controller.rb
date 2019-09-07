@@ -3,7 +3,7 @@ class CampaignsController < ApplicationController
 	before_action :set_campaign, only: [:show,:edit,:update,:destroy]
 
 	def index
-		@campaigns = Campaign.all
+		@campaigns = Campaign.paginate(page: params[:page], per_page: 3)
 	end
 
 	def show
