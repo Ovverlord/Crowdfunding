@@ -1,0 +1,13 @@
+ en:
+  activerecord:
+   models:
+    campaign: 'Campaign'
+   attributes:
+    campaign:
+     title: 'Name'
+     summary: 'Summary'
+     body: 'Body'
+     all_tags: 'Tags'
+  errors: 
+    messages:
+      blank: 'can not be blank'

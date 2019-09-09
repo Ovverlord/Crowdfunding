@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 		root 'campaigns#index'
 		resources :campaigns
 
-		resources :tags, only: [:show]
+		resources :tags, only: [:index, :show]
 	end
 end

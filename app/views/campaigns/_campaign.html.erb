@@ -6,7 +6,7 @@
 			|
 			<%= link_to t('common.edit'),edit_campaign_path(campaign)%>
 
-			<%= link_to t('common.delete'),campaign_path(campaign), method: :delete, data:{confirm:'Sure?'}%>
+			<%= link_to t('common.delete'),campaign_path(campaign), method: :delete, data: {confirm:  t('common.quest_to_delete')}%>
 		</small>
 	</section>
 

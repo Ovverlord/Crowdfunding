@@ -22,6 +22,11 @@ gem "mini_magick"
 
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
+gem "redcarpet"
+gem 'markitup-rails'
+gem 'bootstrap-tagsinput-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -44,7 +49,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bootstrap', '~> 4.3.1'
-gem 'jquery-rails'
+
 gem 'popper_js', '~> 1.14.5'
 
 group :development, :test do

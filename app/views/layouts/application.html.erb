@@ -11,45 +11,59 @@
 
 <body>
 
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="<%= campaigns_path %>">Проекты</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<%= new_campaign_path %>">Новый проект <span class="sr-only">(current)</span></a>
+        <%= link_to t('navigation.all_campaigns'), campaigns_path, class: 'nav-link' %>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
-    </form>
-  </div>
-</nav>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to t('navigation.new_campaign'), new_campaign_path, class: 'nav-link' %>
+        </li>
+      </ul>
 
 
-<div class="container main">
-  <div class="row">
-    <div class="col-md-12">
-      <%flash.each do |name,flash| %>
-      <div class="alert alert-<%=name%>">
-        <%= flash %>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+      </form>
+
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item<%= " active" if I18n.locale == :ru %>">
+          <%= link_to "Рус", {locale: :ru}, class: "nav-link" %>
+        </li>
+        <li class="nav-item<%= " active" if I18n.locale == :en %>">
+          <%= link_to "Eng", {locale: :en}, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container main">
+    <div class="row">
+      <div class="col-md-12">
+        <%flash.each do |name,flash| %>
+        <div class="alert alert-<%=name%>">
+          <%= flash %>
+        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-7">
-      <%= yield %>
-    </div>
-    <div class="col-md-5">
-      <%= render 'layouts/tags_cloud' %>
+    <div class="row">
+      <div class="col-md-9">
+        <%= yield %>
+      </div>
+      <div class="col-md-3">
+        <%= render 'layouts/tags_cloud' %>
+      </div>
     </div>
   </div>
-</div>
 </body>
 </html>

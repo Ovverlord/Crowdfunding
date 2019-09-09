@@ -1,6 +1,6 @@
 class Campaign < ApplicationRecord
 
-	has_many :taggings
+	has_many :taggings,  dependent: :destroy
 	has_many :tags, through: :taggings
 	validates :title, :summary, :body, presence: true
 
