@@ -44,7 +44,7 @@ class CampaignsController < ApplicationController
 	end
 
 	def campaign_params
-		params.require(:campaign).permit(:title,:summary,:body,:all_tags)
+		params.require(:campaign).permit(:title, :summary, :body, :image, :all_tags)
 	end
 
 end

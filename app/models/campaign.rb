@@ -1,5 +1,6 @@
 class Campaign < ApplicationRecord
 
+	has_one_attached :image
 	has_many :taggings,  dependent: :destroy
 	has_many :tags, through: :taggings
 	validates :title, :summary, :body, presence: true

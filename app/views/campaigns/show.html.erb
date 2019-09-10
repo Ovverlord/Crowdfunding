@@ -13,4 +13,9 @@
 	<section class="campaign-body">
 		<%= markdown(@campaign.body) %>
 	</section>
+
+	<div class="container main", style="width:800px; height: auto">
+		<%= image_tag(@campaign.image,style:'width:100%') if @campaign.image.attached?%>
+	</div>
+
 </article>

@@ -20,6 +20,8 @@ gem 'carrierwave', '~> 2.0'
 
 gem "mini_magick"
 
+gem "google-cloud-storage", "~> 1.8", require: false
+
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
 gem "redcarpet"
