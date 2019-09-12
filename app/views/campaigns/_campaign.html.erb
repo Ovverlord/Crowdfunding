@@ -4,14 +4,25 @@
 		<small>
 			<time><%= campaign.created_at.to_date.strftime("%d %B, %Y")%>	</time>
 			|
-			<%= link_to t('common.edit'),edit_campaign_path(campaign)%>
 
-			<%= link_to t('common.delete'),campaign_path(campaign), method: :delete, data: {confirm:  t('common.quest_to_delete')}%>
+			<% if campaign.category.present? %>
+			  <%= link_to campaign.category.name,campaign.category%>
+			<% end %>
+			|
+
+			<%= link_to t('common.edit'),edit_campaign_path(campaign), class: 'btn btn-outline-primary btn-sm'%>
+			|
+
+			<%= link_to t('common.delete'),campaign_path(campaign), method: :delete, data: {confirm:  t('common.quest_to_delete')},class: 'btn btn-outline-danger btn-sm'%>
 		</small>
 	</section>
 
 	<section class="campaign-summary">
 		<%= campaign.summary %>
+	</section>
+
+	<section class="post-summary clearfix">
+		<%= image_tag(campaign.image) if campaign.image.attached? %>
 	</section>
 
 	<section class="footer-summary">

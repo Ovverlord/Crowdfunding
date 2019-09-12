@@ -8,6 +8,9 @@
      summary: 'Описание'
      body: 'Содержание'
      all_tags: 'Теги'
+     image: 'Главное изображение:'
+    category: 
+      name: 'Название'
   errors: 
     messages:
       blank: 'не может быть пустым'

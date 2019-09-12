@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 		resources :campaigns
 
 		resources :tags, only: [:index, :show]
+		resources :categories
 	end
 end

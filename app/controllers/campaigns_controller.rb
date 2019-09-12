@@ -16,8 +16,9 @@ class CampaignsController < ApplicationController
 	def create
 		@campaign = Campaign.new(campaign_params)
 		if @campaign.save
-			redirect_to @campaign
+			redirect_to @campaign, success: 'Кампания создана'
 		else
+			flash.now[:danger] = 'Кампания не создана'
 			render :new
 		end
 	end
@@ -27,9 +28,10 @@ class CampaignsController < ApplicationController
 
 	def update
 		if @campaign.update_attributes(campaign_params)
-			redirect_to @campaign, success: 'Campaign updated'
+			redirect_to @campaign, success: 'Кампания обновлена'
 		else
-			render :edit, danger: 'Campaign not updated'
+			flash.now[:danger] = 'Кампания не обновлена'
+			render :edit
 		end
 	end
 
@@ -44,7 +46,7 @@ class CampaignsController < ApplicationController
 	end
 
 	def campaign_params
-		params.require(:campaign).permit(:title, :summary, :body, :image, :all_tags)
+		params.require(:campaign).permit(:title, :summary, :body, :image, :all_tags,:category_id)
 	end
 
 end

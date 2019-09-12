@@ -25,3 +25,15 @@ en:
   layouts:
     tags_cloud:
       title: 'Tags cloud'
+    select_category: "Select category"
+
+  categories:
+    index:
+      title: 'Categories'
+    new:
+      title: 'New category'
+    edit:
+      title: 'Edit category'
+    form:
+      submit:
+       '%{action} category'

@@ -8,6 +8,9 @@
      summary: 'Summary'
      body: 'Body'
      all_tags: 'Tags'
+     image: 'Main image:'
+    category: 
+     name: 'Название'
   errors: 
     messages:
       blank: 'can not be blank'

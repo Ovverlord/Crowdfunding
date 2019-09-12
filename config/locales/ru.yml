@@ -25,3 +25,15 @@ ru:
   layouts:
     tags_cloud:
       title: 'Облако тегов'
+    select_category: "Выбрать категорию"
+
+  categories:
+    index:
+      title: 'Категории'
+    new:
+      title: 'Новая категория'
+    edit:
+      title: 'Редактирование категории'
+    form:
+      submit:
+       '%{action} категорию'
